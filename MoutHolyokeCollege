@@ -1,0 +1,15 @@
+Return a list of all people whose papers are held at Mount Holyoke College:
+
+SELECT  ?personLabel  
+
+WHERE {
+  
+  ?person wdt:P485 wd:Q1140542 .
+ 
+  
+  SERVICE wikibase:label {
+		bd:serviceParam wikibase:language "en" .
+    
+}
+  }
+
