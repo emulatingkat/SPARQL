@@ -1,0 +1,160 @@
+Return a list of all winners of the Bollingen Prize:
+SELECT  ?personLabel  
+
+WHERE {
+  ?person wdt:P166 wd:Q194944 .
+  
+  SERVICE wikibase:label {
+		bd:serviceParam wikibase:language "en" .
+    
+}
+  }
+Return list of winners as an image grid:
+#defaultView:ImageGridlut
+SELECT  ?personLabel  ?image
+
+WHERE {
+  ?person wdt:P166 wd:Q194944 .
+  ?person wdt:P18 ?image
+  SERVICE wikibase:label {
+		bd:serviceParam wikibase:language "en" .
+    
+}
+  }
+
+Return a list of all winners of the Bollingen Prize along with the geocoordinates of their birthplaces:
+
+SELECT  ?personLabel  ?birthplaceLabel ?coord ?lat ?lon
+
+WHERE {
+  ?person wdt:P166 wd:Q194944 .
+  ?person wdt:P19 ?birthplace
+  OPTIONAL {?birthplace wdt:P625 ?coord. }
+   OPTIONAL {
+    ?birthplace p:P625 ?statement.
+    ?statement psv:P625 ?node.
+    ?node wikibase:geoLatitude ?lat.
+    ?node wikibase:geoLongitude ?lon.
+   }
+  SERVICE wikibase:label {
+		bd:serviceParam wikibase:language "en" .
+    
+}
+  }
+
+Return a list of winners with their DOBs
+
+SELECT  ?personLabel  ?year
+
+WHERE {
+  ?person wdt:P166 wd:Q194944 .
+  ?person wdt:P569 ?year .
+  
+  SERVICE wikibase:label {
+		bd:serviceParam wikibase:language "en" .
+    
+}
+  }
+
+ Return a list of all winners whose archives are held at the Beinecke
+
+SELECT  ?personLabel  
+
+WHERE {
+  ?person wdt:P166 wd:Q194944 .
+  ?person wdt:P485 wd:Q814779 .
+  
+  SERVICE wikibase:label {
+		bd:serviceParam wikibase:language "en" .
+    
+}
+  }
+
+ Return a list of all winners whose archives are held at the Beinecke as a image grid
+
+#defaultView:ImageGridlut
+SELECT  ?personLabel  ?image
+
+WHERE {
+  ?person wdt:P166 wd:Q194944 .
+  ?person wdt:P485 wd:Q814779 .
+  ?person wdt:P18  ?image
+  
+  SERVICE wikibase:label {
+		bd:serviceParam wikibase:language "en" .
+    
+}
+  }
+
+Return a list of winners where there is information about what institution holds their archvies
+
+SELECT  ?personLabel  ?archiveLabel
+
+WHERE {
+  ?person wdt:P166 wd:Q194944 .
+  ?person wdt:P485 ?archive .
+  
+  SERVICE wikibase:label {
+		bd:serviceParam wikibase:language "en" .
+    
+}
+  }
+
+Winners and employers
+
+SELECT  ?personLabel  ?employerLabel
+
+WHERE {
+  ?person wdt:P166 wd:Q194944 .
+  ?person wdt:P108 ?employer .
+  
+  SERVICE wikibase:label {
+		bd:serviceParam wikibase:language "en" .
+    
+}
+  }
+
+Return a list of winners and their notable works
+
+SELECT  ?personLabel  ?workLabel
+
+WHERE {
+  ?person wdt:P166 wd:Q194944 .
+  ?person wdt:P800 ?work .
+  
+  SERVICE wikibase:label {
+		bd:serviceParam wikibase:language "en" .
+    
+}
+  }
+
+Winners of the Bollingen listed with all other awards received
+
+SELECT  ?personLabel  ?awardLabel
+
+WHERE {
+  
+   ?person wdt:P166 wd:Q194944.
+  ?person wdt:P166 ?award .
+  
+  SERVICE wikibase:label {
+		bd:serviceParam wikibase:language "en" .
+}
+  }
+
+Return a list of all educational institutions attended by winners
+
+SELECT  ?personLabel  ?schoolLabel
+
+WHERE {
+  ?person wdt:P166 wd:Q194944 .
+  ?person wdt:P69 ?school .
+  
+  SERVICE wikibase:label {
+		bd:serviceParam wikibase:language "en" .
+    
+}
+  }
+
+
+
