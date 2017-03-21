@@ -11,3 +11,15 @@ WHERE {
 }
   }
   
+Return the names of all fileformats for which there is a PUID in Wikidata:
+SELECT ?format ?formatLabel ?puid
+
+WHERE {
+  
+  ?format wdt:P2748 ?puid .
+            
+  SERVICE wikibase:label {
+		bd:serviceParam wikibase:language "en" .
+    
+}
+  }
