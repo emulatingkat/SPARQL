@@ -1,0 +1,13 @@
+#defaultView:Timeline
+
+SELECT ?version ?versionLabel ?year
+
+WHERE {
+
+  ?version wdt:P279 wd:Q235419.
+
+  ?version wdt:P577 ?year
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
