@@ -1,0 +1,9 @@
+#Return a list of all browsers based on Firefox
+
+SELECT ?browser ?browserLabel 
+WHERE {
+  ?browser wdt:P31 wd:Q6368.
+  ?browser wdt:P144 wd:Q698.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
