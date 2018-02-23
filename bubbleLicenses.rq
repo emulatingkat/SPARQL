@@ -1,0 +1,21 @@
+#Create a bubble chart showing the license superclasses with the most software titles assigned to them
+
+SELECT DISTINCT  ?license ?licenseLabel (COUNT(?app) AS ?count)
+
+WHERE {
+
+  ?app (p:P31/ps:P31/wdt:P279*) wd:Q7397.
+
+  ?app wdt:P275 ?license.
+
+  ?license wdt:P279 ?class
+
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
+
+
+GROUP BY ?license ?licenseLabel
+
+ORDER BY DESC(?count)
