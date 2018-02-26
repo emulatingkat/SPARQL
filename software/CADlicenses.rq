@@ -1,0 +1,15 @@
+SELECT ?app ?appLabel ?licenseLabel ?date
+
+
+WHERE {
+
+  ?app wdt:P31/wdt:P279* wd:Q15548076.
+
+  ?app wdt:P275 ?license .
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
+
+
+ORDER BY ?license
