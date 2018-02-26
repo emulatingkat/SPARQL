@@ -1,0 +1,26 @@
+#defaultView:BubbleChart 
+
+SELECT ?app ?appLabel (COUNT(?format) AS ?count)
+
+WHERE {
+
+  ?app (p:P31/ps:P31/wdt:P279) wd:Q7397 .
+
+  ?app wdt:P1072 ?format .
+
+            
+
+  SERVICE wikibase:label {
+
+		bd:serviceParam wikibase:language "en" .
+
+    
+
+}
+
+  }
+
+
+GROUP BY ?app ?appLabel
+
+ORDER BY DESC(?count)
