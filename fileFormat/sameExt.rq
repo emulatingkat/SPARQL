@@ -1,0 +1,17 @@
+SELECT DISTINCT ?extension ?extensionLabel (COUNT(?format) AS ?count)
+
+WHERE
+
+{
+
+ ?format (p:P31/ps:P31/wdt:P279*) wd:Q235557
+
+ ; wdt:P1195 ?extension .
+
+ SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
+
+}
+
+group by ?extension ?extensionLabel
+
+ORDER BY DESC (?count)
