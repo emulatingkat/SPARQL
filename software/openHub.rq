@@ -1,0 +1,9 @@
+SELECT ?software ?softwareLabel  ?valueLabel
+
+{
+
+	?software wdt:P1972 ?value .
+
+	SERVICE wikibase:label { bd:serviceParam wikibase:language "en,en"  }    
+
+}
