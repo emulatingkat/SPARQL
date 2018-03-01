@@ -1,0 +1,11 @@
+SELECT DISTINCT ?player ?playerLabel ?licenseLabel WHERE {
+
+  ?player (p:P31/ps:P31/wdt:P279*) wd:Q210337.
+
+  ?player wdt:P275 ?license.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
+
+ORDER BY ?licenseLabel
