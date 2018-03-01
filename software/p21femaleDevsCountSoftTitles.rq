@@ -1,0 +1,9 @@
+SELECT ?developer ?developerLabel (COUNT(?software) AS ?count) WHERE {
+  ?software (p:P31/ps:P31/wdt:P279*) wd:Q7397.
+  ?software wdt:P178 ?developer.
+  ?developer wdt:P31 wd:Q5.
+  ?developer wdt:P21 wd:Q6581072.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+GROUP BY ?developer ?developerLabel
+ORDER BY DESC(?count)
