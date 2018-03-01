@@ -1,0 +1,9 @@
+SELECT DISTINCT ?software ?softwareLabel ?modeLabel WHERE {
+
+  ?software wdt:P400 wd:Q1282269.
+
+  OPTIONAL {?software wdt:P404 ?mode}.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
