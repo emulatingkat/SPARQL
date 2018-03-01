@@ -1,0 +1,17 @@
+#defaultView:ImageGrid
+
+SELECT ?item ?label ?image WHERE {
+
+  ?item wdt:P1416 wd:Q685777.
+
+  ?item wdt:P154 ?image
+
+  SERVICE wikibase:label {
+
+    bd:serviceParam wikibase:language "en" . 
+
+    ?item rdfs:label ?label
+
+  }
+
+}
