@@ -1,0 +1,19 @@
+SELECT ?item ?label ?_image WHERE {
+
+  ?item wdt:P31 wd:Q182656.
+
+  ?item wdt:P176 wd:Q248.
+
+  SERVICE wikibase:label {
+
+    bd:serviceParam wikibase:language "en" . 
+
+    ?item rdfs:label ?label
+
+  }
+
+  
+
+OPTIONAL { ?item wdt:P18 ?_image. }
+
+}
