@@ -1,0 +1,13 @@
+#defaultView:ImageGrid
+
+SELECT DISTINCT ?comp ?compLabel ?archiveidLabel ?image WHERE {
+
+  ?comp (wdt:P31/wdt:P279*) wd:Q17444171.
+
+  ?comp wdt:P724 ?archiveid.
+
+  OPTIONAL { ?comp wdt:P18 ?image. }
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
