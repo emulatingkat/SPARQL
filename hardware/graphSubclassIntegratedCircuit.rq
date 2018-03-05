@@ -1,0 +1,13 @@
+#defaultView:Graph
+
+SELECT DISTINCT ?ic ?icLabel ?subclassOf WHERE {
+
+  ?ic wdt:P279* wd:Q80831.
+
+  OPTIONAL { ?ic wdt:P279 ?subclassOf. }
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
+
+ORDER BY ?icLabel
