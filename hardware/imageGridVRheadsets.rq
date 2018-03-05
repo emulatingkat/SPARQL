@@ -1,0 +1,17 @@
+#defaultView:ImageGrid
+
+SELECT ?headset ?headsetLabel ?image
+
+WHERE {
+
+  ?headset wdt:P31 wd:Q22980233.
+
+  OPTIONAL {?headset wdt:P18 ?image}.
+
+  SERVICE wikibase:label {
+
+    bd:serviceParam wikibase:language "en" . 
+
+  }
+
+}
