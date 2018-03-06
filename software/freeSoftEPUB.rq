@@ -1,0 +1,15 @@
+SELECT DISTINCT ?app ?appLabel ?licenseLabel ?logo WHERE {
+
+  ?app (p:P31/ps:P31/wdt:P279*) wd:Q7397.
+
+  ?app wdt:P1072 wd:Q475488.
+
+  ?app wdt:P275 ?license.
+
+  ?license (wdt:P31/wdt:P279*) wd:Q3943414.
+
+  ?app wdt:P154 ?logo.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
