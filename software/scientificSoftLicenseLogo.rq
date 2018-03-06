@@ -1,0 +1,13 @@
+SELECT ?software ?softwareLabel ?licenseLabel ?logo WHERE {
+
+  ?software (wdt:P31/wdt:P279*) wd:Q7397.
+
+  ?software wdt:P366 wd:Q336.
+
+  OPTIONAL {?software wdt:P275 ?license.}
+
+  OPTIONAL {?software wdt:P154 ?logo.}
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
