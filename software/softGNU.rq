@@ -1,0 +1,11 @@
+SELECT ?software ?softwareLabel ?logo WHERE {
+
+  ?software  wdt:P178 wd:Q7598.
+
+  OPTIONAL {?software wdt:P154 ?logo.}
+
+  
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
