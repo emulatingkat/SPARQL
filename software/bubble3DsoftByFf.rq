@@ -1,0 +1,32 @@
+#defaultView:BubbleChart
+
+SELECT DISTINCT ?software ?softwareLabel  (count (?ff) as ?count)
+
+
+WHERE {
+
+  
+
+  ?software wdt:P31/wdt:P279* wd:Q7397.
+
+  ?software wdt:P366 wd:Q189177 .
+
+  ?software wdt:P1072 ?ff.
+
+           
+
+  SERVICE wikibase:label {
+
+		bd:serviceParam wikibase:language "en" .
+
+    
+
+}
+
+  }
+
+
+GROUP BY ?software ?softwareLabel
+
+
+ORDER BY DESC(?count)
