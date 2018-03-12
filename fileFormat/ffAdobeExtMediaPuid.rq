@@ -1,0 +1,17 @@
+SELECT ?item ?itemLabel ?ext ?media ?pro ?solve WHERE {
+
+  ?item wdt:P31/wdt:P279* wd:Q235557.
+
+  ?item wdt:P178 wd:Q11463.
+
+    OPTIONAL {?item wdt:P1195 ?ext.}
+
+  OPTIONAL {?item wdt:P1163 ?media.}
+
+  OPTIONAL {?item wdt:P2748 ?pro.}
+
+  OPTIONAL {?item wdt:P3381 ?solve.}
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
