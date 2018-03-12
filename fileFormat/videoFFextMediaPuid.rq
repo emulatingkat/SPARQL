@@ -1,0 +1,17 @@
+SELECT DISTINCT ?item ?itemLabel ?ext ?media ?puid WHERE {
+
+  { ?item wdt:P31 wd:Q18359031. }
+
+  UNION
+
+  { ?item wdt:P31 wd:Q10715094. }
+
+  ?item wdt:P1195 ?ext.
+
+  OPTIONAL { ?item wdt:P1163 ?media. }
+
+  OPTIONAL { ?item wdt:P2748 ?puid. }
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
