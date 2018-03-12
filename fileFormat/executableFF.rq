@@ -1,0 +1,15 @@
+SELECT ?ff ?ffLabel ?mime ?pronom ?uti
+
+WHERE {
+
+  ?ff wdt:P31/wdt:P279* wd:Q17560478.
+
+  OPTIONAL {?ff wdt:P1163 ?mime.}
+
+  OPTIONAL {?ff wdt:P2748 ?pronom.}
+
+  OPTIONAL {?ff wdt:P3641 ?uti.}
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
+
+}
