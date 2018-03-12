@@ -1,0 +1,22 @@
+SELECT DISTINCT ?format ?formatLabel ?puid ?mime
+
+
+WHERE {
+
+  
+
+  ?format wdt:P2748 ?puid .
+
+  OPTIONAL {?format wdt:P1163 ?mime .}
+
+   
+
+  SERVICE wikibase:label {
+
+		bd:serviceParam wikibase:language "en" .
+
+    
+
+}
+
+  }
