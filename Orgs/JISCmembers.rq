@@ -1,0 +1,7 @@
+SELECT ?memberLabel WHERE {
+
+  ?member wdt:P463 wd:Q6269240.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
