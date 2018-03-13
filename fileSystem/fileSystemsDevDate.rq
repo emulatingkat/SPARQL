@@ -1,0 +1,17 @@
+SELECT ?item ?itemLabel ?devLabel ?date
+
+WHERE 
+
+{
+
+  ?item (p:P31/ps:P31/wdt:P279*) wd:Q174989.
+
+  
+
+  OPTIONAL {?item wdt:P178 ?dev}
+
+  OPTIONAL {?item wdt:P577 ?date} 
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
