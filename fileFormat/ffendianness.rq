@@ -1,0 +1,22 @@
+SELECT ?format ?formatLabel ?endianLabel
+
+
+WHERE {
+
+  
+
+  ?format  (p:P31/ps:P31/wdt:P279*) wd:Q235557 .
+
+  ?format wdt:P3374 ?endian .
+
+  
+
+  SERVICE wikibase:label {
+
+		bd:serviceParam wikibase:language "en" .
+
+    
+
+}
+
+  }
