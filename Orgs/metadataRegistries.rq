@@ -1,0 +1,9 @@
+SELECT ?lib ?libLabel ?url WHERE {
+
+  ?lib (p:P31/ps:P31/wdt:P279*) wd:Q3423635.
+
+  ?lib wdt:P856 ?url.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
