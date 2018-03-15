@@ -1,0 +1,22 @@
+#defaultView:Dimensions
+
+SELECT ?memberLabel ?othersLabel
+
+
+WHERE {
+
+   	?member	wdt:P463 wd:Q27981723.
+
+    ?member	wdt:P463 ?others .
+
+            
+
+  SERVICE wikibase:label {
+
+		bd:serviceParam wikibase:language "en" .
+
+    
+
+}
+
+  }
