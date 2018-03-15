@@ -1,0 +1,11 @@
+#defaultView:ImageGrid
+
+SELECT DISTINCT ?memberLabel ?image WHERE {
+
+  ?member wdt:P463 wd:Q697497.
+
+  ?member wdt:P18 ?image
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
