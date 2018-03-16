@@ -1,0 +1,11 @@
+SELECT ?software ?softwareLabel ?entryLabel ?flatLabel WHERE {
+
+  ?software (wdt:P31/wdt:P279*) wd:Q7397.
+
+  ?software wdt:P2537 ?entry.
+
+  ?software wdt:P4655 ?flat
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
