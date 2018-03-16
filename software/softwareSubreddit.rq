@@ -1,0 +1,17 @@
+SELECT DISTINCT ?software ?softwareLabel ?subreddit
+
+WHERE 
+
+{
+
+  ?software wdt:P31/wdt:P279* wd:Q7397.
+
+  ?software wdt:P3984 ?subreddit.
+
+ 
+
+  
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
