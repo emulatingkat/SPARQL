@@ -1,0 +1,18 @@
+SELECT  ?recLabel  ?awardLabel 
+
+
+WHERE {
+
+  ?rec wdt:P166 ?award .
+
+  ?award wdt:P1027 wd:Q30256408
+
+  SERVICE wikibase:label {
+
+		bd:serviceParam wikibase:language "en" .
+
+    
+
+}
+
+  }
