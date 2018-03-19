@@ -1,0 +1,13 @@
+#defaultView:ImageGrid
+
+SELECT ?awardeeLabel ?image WHERE {
+
+  ?awardee wdt:P166 wd:Q55200.
+
+  ?awardee wdt:P18 ?image.
+
+ SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+  
+
+}
