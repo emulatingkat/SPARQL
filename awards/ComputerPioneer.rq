@@ -1,0 +1,11 @@
+SELECT ?person ?personLabel ?schoolLabel
+
+WHERE {
+
+   ?person wdt:P166 wd:Q4363133;
+
+          p:P69 [ps:P69 ?school].
+
+ SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+   }
