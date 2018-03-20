@@ -1,0 +1,22 @@
+SELECT DISTINCT ?format ?formatLabel ?puid ?fdd ?solve
+
+
+WHERE {
+
+  
+
+  ?format wdt:P2748 ?puid .
+
+  ?format wdt:P3266 ?fdd .
+
+  ?format wdt:P3381 ?solve .         
+
+  SERVICE wikibase:label {
+
+		bd:serviceParam wikibase:language "en" .
+
+    
+
+}
+
+  }
