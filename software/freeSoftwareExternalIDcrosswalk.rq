@@ -1,0 +1,19 @@
+SELECT ?software ?softwareLabel ?deb ?fed ?gen ?arch WHERE {
+
+  ?software (wdt:P31/wdt:P279*) wd:Q7397.
+
+  ?software wdt:P2537 ?entry.
+
+  OPTIONAL {?software wdt:P3442 ?deb.}
+
+  OPTIONAL {?software wdt:P3463 ?fed.}
+
+  OPTIONAL {?software wdt:P3473 ?ubu.}
+
+  OPTIONAL {?software wdt:P3499 ?gen.}
+
+  OPTIONAL {?software wdt:P3454 ?arch.}
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
