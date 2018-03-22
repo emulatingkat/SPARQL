@@ -1,0 +1,9 @@
+SELECT ?app ?appLabel ?langLabel WHERE {
+
+  ?app wdt:P31 wd:Q498267.
+
+  ?app wdt:P277 ?lang.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
