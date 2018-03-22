@@ -1,0 +1,17 @@
+SELECT DISTINCT ?software ?softwareLabel ?devLabel ?ISNI
+
+WHERE 
+
+{
+
+  ?software wdt:P31/wdt:P279* wd:Q7397.
+
+  ?software wdt:P178 ?dev.
+
+  ?dev wdt:P213 ?ISNI.
+
+  
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
