@@ -1,0 +1,17 @@
+SELECT ?software ?softwareLabel ?fsf ?hub ?fram ?logo WHERE {
+
+  ?software (wdt:P31/wdt:P279*) wd:Q7397.
+
+  ?software wdt:P361 wd:Q20712193.
+
+  OPTIONAL {?software wdt:P2537 ?fsf.}
+
+  OPTIONAL {?software wdt:P1972 ?hub.}
+
+  OPTIONAL {?software wdt:P4107 ?fram.}
+
+  OPTIONAL {?software wdt:P154 ?logo.}
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
