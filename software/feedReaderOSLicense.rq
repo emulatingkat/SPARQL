@@ -1,0 +1,13 @@
+SELECT DISTINCT ?app ?appLabel ?osLabel ?licLabel ?image WHERE {
+
+  ?app wdt:P31 wd:Q498267.
+
+  ?app wdt:P306 ?os.
+
+  ?app wdt:P275 ?lic.
+
+  ?app wdt:P154 ?image.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
