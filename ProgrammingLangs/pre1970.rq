@@ -1,0 +1,15 @@
+#defaultView:Timeline
+
+SELECT ?lang ?langLabel ?time
+
+{
+
+  ?lang wdt:P31 wd:Q9143 .
+
+  ?lang wdt:P571 ?time .
+
+FILTER((?time) < "1970-01-01"^^xsd:dateTime)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
+
+}
