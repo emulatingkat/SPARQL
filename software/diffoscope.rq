@@ -1,0 +1,11 @@
+SELECT ?fileformat ?fileformatLabel ?ext ?media WHERE {
+
+  wd:Q50989245 wdt:P1072 ?fileformat.
+
+  OPTIONAL { ?fileformat wdt:P1195 ?ext. }
+
+  OPTIONAL { ?fileformat wdt:P1163 ?media. }
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
