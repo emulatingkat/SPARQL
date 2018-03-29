@@ -1,0 +1,18 @@
+SELECT DISTINCT ?lang  ?langLabel 
+
+
+WHERE {
+
+  ?lang wdt:P737 wd:Q132874 .
+
+  
+
+  SERVICE wikibase:label {
+
+		bd:serviceParam wikibase:language "en" .
+
+    
+
+}
+
+  }
