@@ -1,0 +1,15 @@
+SELECT ?app ?appLabel ?licenseLabel ?image WHERE {
+
+  ?app wdt:P361 wd:Q2896872.
+
+  OPTIONAL {?app wdt:P275 ?license.}
+
+  OPTIONAL {?app wdt:P154 ?image.}
+
+  
+
+  
+
+SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
