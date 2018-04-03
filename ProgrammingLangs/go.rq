@@ -1,0 +1,9 @@
+SELECT ?soft ?softLabel ?classLabel WHERE {
+
+  ?soft wdt:P277 wd:Q37227.
+
+  ?soft wdt:P31 ?class.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
