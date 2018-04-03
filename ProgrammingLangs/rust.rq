@@ -1,0 +1,11 @@
+SELECT DISTINCT ?software ?softwareLabel ?licenseLabel ?image  WHERE {
+
+  ?software wdt:P277 wd:Q575650.
+
+  OPTIONAL { ?software wdt:P275 ?license. }
+
+  OPTIONAL { ?software wdt:P154 ?image. }
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
