@@ -1,0 +1,20 @@
+SELECT ?softwareLabel ?twitter
+
+
+WHERE {
+
+  ?software (p:P31/ps:P31/wdt:P279*) wd:Q7397 .
+
+  ?software wdt:P366 wd:Q336 .
+
+  ?software wdt:P2002 ?twitter          
+
+  SERVICE wikibase:label {
+
+		bd:serviceParam wikibase:language "en" .
+
+    
+
+}
+
+  }
