@@ -1,0 +1,11 @@
+#defaultView:Timeline
+
+SELECT ?app ?appLabel ?year WHERE {
+
+  ?app wdt:P279 wd:Q272597.
+
+  ?app wdt:P577 ?year .
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
