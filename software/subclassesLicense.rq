@@ -1,0 +1,13 @@
+SELECT DISTINCT ?license ?licenseLabel ?subclassOf 
+
+WHERE {
+
+  ?license wdt:P279* wd:Q207621 .
+
+  OPTIONAL { ?license wdt:P279 ?subclassOf } .
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
+
+}
+
+ORDER BY ?licenseLabel
