@@ -1,0 +1,11 @@
+#defaultView:ImageGrid
+
+SELECT ?work ?workLabel ?image WHERE {
+
+  ?work wdt:P2283 wd:Q855971.
+
+  ?work wdt:P18 ?image.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
