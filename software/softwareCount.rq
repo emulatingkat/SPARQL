@@ -1,0 +1,10 @@
+SELECT DISTINCT ?app ?appLabel 
+
+WHERE {
+
+  ?app wdt:P31/wdt:P279* wd:Q7397.
+
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
