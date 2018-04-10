@@ -1,0 +1,15 @@
+#defaultView:BubbleChart
+
+SELECT ?developer ?developerLabel (COUNT(?os) AS ?count) WHERE {
+
+  ?os (p:P31/ps:P31/wdt:P279) wd:Q9135.
+
+  ?os wdt:P178 ?developer.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
+
+GROUP BY ?developer ?developerLabel
+
+ORDER BY DESC(?count)
