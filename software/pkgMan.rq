@@ -1,0 +1,13 @@
+SELECT ?item ?itemLabel ?logo
+
+WHERE 
+
+{
+
+  ?item wdt:P31 wd:Q891055.
+
+  OPTIONAL {?item wdt:P154 ?logo.}
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
