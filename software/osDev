@@ -1,0 +1,11 @@
+SELECT DISTINCT ?os ?osLabel ?devLabel
+WHERE {
+  
+  ?os (p:P31/ps:P31/wdt:P279*) wd:Q9135 .
+  ?os wdt:P178 ?dev.          
+  SERVICE wikibase:label {
+		bd:serviceParam wikibase:language "en" .
+    
+}
+  }
+ORDER BY ?devLabel
