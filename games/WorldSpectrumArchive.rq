@@ -1,0 +1,11 @@
+SELECT ?item ?itemLabel ?WorldOfSpectrumID ?archiveID
+
+{
+
+	?item wdt:P4705 ?WorldOfSpectrumID.
+
+        ?item wdt:P724 ?archiveID.
+
+	SERVICE wikibase:label { bd:serviceParam wikibase:language "en,en"  }    
+
+}
