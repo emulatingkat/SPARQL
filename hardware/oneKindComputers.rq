@@ -1,0 +1,9 @@
+SELECT ?computer ?computerLabel ?image WHERE {
+
+  ?computer wdt:P31 wd:Q28542014.
+
+  OPTIONAL {?computer wdt:P18 ?image}.
+
+   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+  }
