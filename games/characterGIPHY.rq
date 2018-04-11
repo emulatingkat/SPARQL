@@ -1,0 +1,9 @@
+SELECT DISTINCT ?item ?itemLabel ?giphy WHERE {
+
+  ?item wdt:P31/wdt:P279* wd:Q95074.
+
+  ?item wdt:P4013 ?giphy.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
