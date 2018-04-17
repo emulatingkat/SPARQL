@@ -1,0 +1,15 @@
+SELECT DISTINCT ?software ?softwareLabel 
+
+WHERE 
+
+{
+
+  ?software wdt:P31/wdt:P279* wd:Q7397.
+
+  FILTER NOT EXISTS {?software wdt:P1072 ?ff}.
+
+  MINUS {?software wdt:P31/wdt:P279* wd:Q7889.}
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
