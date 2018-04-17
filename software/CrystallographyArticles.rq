@@ -1,0 +1,13 @@
+SELECT DISTINCT ?software ?softwareLabel ?articleLabel WHERE {
+
+  ?software wdt:P31/wdt:P279* wd:Q7397.
+
+  {?software wdt:P366 wd:Q160398}
+
+  UNION {?software wdt:P366 wd:Q826582.}
+
+  OPTIONAL {?article wdt:P921 ?software.}
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+
+}
