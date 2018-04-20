@@ -1,0 +1,19 @@
+#defaultView:BubbleChart
+
+SELECT ?application ?applicationLabel  (COUNT(?software) AS ?count)
+
+WHERE 
+
+{
+
+  ?application wdt:P31/wdt:P279* wd:Q7397.
+
+  ?application wdt:P1547 ?software.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
+
+GROUP BY ?application ?applicationLabel
+
+ORDER BY DESC (?count)
