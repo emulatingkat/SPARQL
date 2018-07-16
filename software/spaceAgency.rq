@@ -1,0 +1,13 @@
+SELECT ?item ?itemLabel ?software ?softwareLabel
+
+WHERE 
+
+{
+
+  ?item wdt:P31 wd:Q17505024.
+
+  ?software wdt:P178 ?item.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
