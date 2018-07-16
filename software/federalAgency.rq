@@ -1,0 +1,15 @@
+SELECT ?agency ?agencyLabel ?softwareLabel ?logo
+
+WHERE 
+
+{
+
+  ?agency wdt:P31/wdt:P279* wd:Q20857065.
+
+  ?software wdt:P178 ?agency.
+
+  OPTIONAL {?software wdt:P154 ?logo}.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
