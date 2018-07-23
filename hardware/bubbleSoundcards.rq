@@ -1,0 +1,18 @@
+SELECT  ?manufacturer ?manufacturerLabel(COUNT(?item) AS ?count)
+
+WHERE 
+
+{
+
+  ?item wdt:P31 wd:Q4343.
+
+  ?item wdt:P176 ?manufacturer
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
+
+GROUP BY ?manufacturer ?manufacturerLabel
+
+
+ORDER BY DESC(?count)
