@@ -1,0 +1,17 @@
+SELECT ?item ?itemLabel ?manufacturerLabel ?date ?image
+
+WHERE 
+
+{
+
+  ?item wdt:P31 wd:Q4343.
+
+  ?item wdt:P18 ?image.
+
+  OPTIONAL {?item wdt:P176 ?manufacturer.}
+
+  OPTIONAL {?item wdt:P571 ?date}.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
