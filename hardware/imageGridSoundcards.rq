@@ -1,0 +1,15 @@
+#defaultView:ImageGrid
+
+SELECT ?item ?itemLabel ?image
+
+WHERE 
+
+{
+
+  ?item wdt:P31 wd:Q4343.
+
+  ?item wdt:P18 ?image.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
