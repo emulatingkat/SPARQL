@@ -1,0 +1,17 @@
+SELECT ?item ?itemLabel ?devLabel ?licLabel ?plangLabel
+
+WHERE 
+
+{
+
+  ?item wdt:P31 wd:Q830340.
+
+  OPTIONAL {?item wdt:P178 ?dev.}
+
+  OPTIONAL {?item wdt:P275 ?lic.}
+
+  OPTIONAL {?item wdt:P277 ?plang.}
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
