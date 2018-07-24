@@ -1,0 +1,15 @@
+#File formats that have their own identifier in the Getty Art and Architecture Thesaurus
+
+SELECT ?item ?itemLabel ?AATID
+
+WHERE 
+
+{
+
+  ?item wdt:P31/wdt:P279* wd:Q235557.
+
+  ?item wdt:P1014 ?AATID.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
