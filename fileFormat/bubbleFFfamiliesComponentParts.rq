@@ -1,0 +1,24 @@
+#File format families by count of component parts
+
+#defaultView:BubbleChart
+
+SELECT ?item ?itemLabel (COUNT (?part) as ?count)
+
+WHERE 
+
+{
+
+  ?item wdt:P31 wd:Q26085352.
+
+  ?item wdt:P527 ?part.
+
+  
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
+
+
+GROUP BY ?item ?itemLabel
+
+ORDER BY DESC (?count)
