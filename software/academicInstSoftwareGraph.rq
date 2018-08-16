@@ -1,0 +1,13 @@
+#defaultView:Graph
+
+SELECT DISTINCT ?item ?itemLabel ?software ?softwareLabel ("00FFFF" AS ?rgb) 
+
+WHERE {
+
+  ?item wdt:P31/wdt:P279* wd:Q4671277.
+
+  ?software wdt:P178 ?item.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
