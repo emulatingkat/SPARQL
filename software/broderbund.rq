@@ -1,0 +1,19 @@
+SELECT DISTINCT ?item ?itemLabel ?pub ?archive
+
+WHERE 
+
+{
+
+  {?item wdt:P178 wd:Q995863}
+
+  UNION {?item wdt:P123 wd:Q995863}.
+
+  OPTIONAL {?item wdt:P571 ?date.}
+
+  ?item wdt:P577 ?pub.
+
+  OPTIONAL {?item wdt:P724 ?archive}.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
