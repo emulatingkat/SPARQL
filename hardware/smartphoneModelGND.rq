@@ -1,0 +1,15 @@
+#defaultView:Timeline
+
+SELECT DISTINCT ?item ?itemLabel ?GNDid ?image ?date  WHERE {
+
+  ?item wdt:P31 wd:Q19723451.
+
+  ?item wdt:P227 ?GNDid.
+
+  ?item wdt:P18 ?image.
+
+  ?item wdt:P571 ?date.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
