@@ -1,0 +1,15 @@
+#defaultView:Graph
+
+SELECT DISTINCT ?item ?itemLabel ?se ?seLabel ("00FFFF" AS ?rgb) WHERE {
+
+  ?item wdt:P414 ?se.
+
+  ?item (wdt:P31/wdt:P279*) wd:Q4830453.
+
+  {?item wdt:P452 wd:Q880371}
+
+  UNION {?item wdt:P1056 wd:Q7397}.
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
