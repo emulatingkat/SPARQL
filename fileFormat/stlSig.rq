@@ -1,8 +1,6 @@
-SELECT ?signature
-WHERE 
-{
-  
-  wd:Q1238229 wdt:P4152 ?signature.
-  
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+SELECT ?signature ?codingLabel WHERE {
+  wd:Q1238229 p:P4152 ?signatureStmt.
+  ?signatureStmt ps:P4152 ?signature.
+  ?signatureStmt pq:P3294 ?coding.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE], en". }
 }
